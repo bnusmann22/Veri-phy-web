@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veri-phy — Trust Before Transaction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══ NAV ════════════════════════════════════════════════ -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-box">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M10 2L3 5.5V10c0 3.87 2.95 7.49 7 8.5 4.05-1.01 7-4.63 7-8.5V5.5L10 2z" fill="white"/>
+        <path d="M7.5 10l2 2 3-3" stroke="#14B8A6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <span class="nav-logo-text">Veri-phy</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#problem">Problem</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#overlays">Overlays</a></li>
+    <li><a href="#trust">Privacy</a></li>
+    <li><a href="#who">Who it's for</a></li>
+  </ul>
+  <div class="nav-right">
+    <a class="nav-dl" href="#download">Download App</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ════════════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-glow"></div>
+  <div class="hero-bg-glow2"></div>
+  <div class="hero-inner">
+    <!-- Left: Copy -->
+    <div class="hero-copy">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        Now Live in Nigeria
+      </div>
+      <h1 class="hero-h1">Trust <span class="accent">before</span><br>transaction.</h1>
+      <p class="hero-sub">Veri-phy silently verifies every incoming payment alert against <strong>real banking infrastructure</strong> — and warns you in seconds before you release goods.</p>
+      <div class="hero-ctas">
+        <a class="btn-dl" href="#download">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+          Download Free
+        </a>
+        <a class="btn-demo" href="#how">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          Watch Demo
+        </a>
+      </div>
+      <div class="hero-trust-bar">
+        <div class="hero-stat"><div class="val">₦4.2B+</div><div class="lbl">Fraud prevented</div></div>
+        <div class="hero-stat"><div class="val">180K+</div><div class="lbl">Merchants protected</div></div>
+        <div class="hero-stat"><div class="val">0.8s</div><div class="lbl">Avg verdict time</div></div>
+      </div>
+    </div>
+
+    <!-- Right: Phone -->
+    <div class="hero-phone-col">
+      <div class="phone-scene">
+        <!-- Floating trust chips -->
+        <div class="phone-float phone-float-1">
+          <div class="pf-icon" style="background:#DCFCE7">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div><div class="pf-val" style="color:#16A34A">VERIFIED</div><div class="pf-sub">₦15,000 · GTBank</div></div>
+        </div>
+        <div class="phone-float phone-float-2">
+          <div class="pf-icon" style="background:#FEF2F2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </div>
+          <div><div class="pf-val" style="color:#EF4444">FAKE ALERT</div><div class="pf-sub">No ledger match</div></div>
+        </div>
+        <div class="phone-float phone-float-3">
+          <div class="pf-icon" style="background:#FFFBEB">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div><div class="pf-val" style="color:#D97706">PENDING</div><div class="pf-sub">Awaiting settlement</div></div>
+        </div>
+
+        <!-- Glow -->
+        <div class="phone-glow-ring"></div>
+
+        <!-- Phone -->
+        <div class="phone-frame">
+          <div class="phone-screen">
+            <div class="phone-notch"><div class="phone-cam-dot"></div></div>
+
+            <!-- WhatsApp-style header -->
+            <div class="scr-status">
+              <span class="scr-status-time">9:41</span>
+              <div class="scr-status-icons">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M1 6l8.5 6L1 18V6zm14 0l8.5 6-8.5 6V6z" opacity=".5"/></svg>
+                <svg width="14" height="12" viewBox="0 0 24 20" fill="white"><path d="M1 1h4v18H1V1zm6 3h4v15H7V4zm6 5h4v10h-4V9zm6-6h4v20h-4V3z"/></svg>
+                <svg width="22" height="12" viewBox="0 0 36 18" fill="none"><rect x="1" y="1" width="30" height="16" rx="3" stroke="white" stroke-width="1.5"/><rect x="3" y="3" width="20" height="12" rx="1.5" fill="white"/><path d="M33 6.5v5a2.5 2.5 0 0 0 0-5z" fill="white" opacity=".4"/></svg>
+              </div>
+            </div>
+
+            <div class="scr-wa-header">
+              <div class="scr-wa-ava">GB</div>
+              <div>
+                <div class="scr-wa-name">GTBank Alerts</div>
+                <div class="scr-wa-sub">SMS · Just now</div>
+              </div>
+            </div>
+
+            <div class="scr-chat-area">
+              <div class="scr-sms">
+                <div class="scr-sms-bank">GTBank Nigeria</div>
+                <div class="scr-sms-body">Dear Customer,</div>
+                <div class="scr-sms-amount">₦25,000.00</div>
+                <div class="scr-sms-body">received in your acct **4521. From: JOHN A IBRAHIM.</div>
+                <div class="scr-sms-ref">Ref: TXN202412**8301 · Balance: ₦157,842.00</div>
+                <div class="scr-sms-time">9:41 AM ✓✓</div>
+              </div>
+
+              <!-- Veri-phy overlay -->
+              <div class="scr-vp-overlay">
+                <div class="vp-handle"></div>
+                <div class="vp-top-row">
+                  <div class="vp-brand">
+                    <div class="vp-brand-box">
+                      <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 5.5V10c0 3.87 2.95 7.49 7 8.5 4.05-1.01 7-4.63 7-8.5V5.5L10 2z" fill="white"/></svg>
+                    </div>
+                    <span class="vp-brand-name">VERI-PHY</span>
+                  </div>
+                  <span class="vp-realtime"><span class="vp-rt-dot"></span> Realtime</span>
+                </div>
+                <div class="vp-verdict">
+                  <div class="vp-verdict-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <div>
+                    <div class="vp-verdict-main">VERIFIED</div>
+                    <div class="vp-verdict-sub">Transaction confirmed in ledger</div>
+                  </div>
+                </div>
+                <div class="vp-details">
+                  <div class="vp-det-row"><span>Amount</span><span class="vp-det-val">₦25,000.00</span></div>
+                  <div class="vp-det-row"><span>Sender</span><span class="vp-det-val">GTBank → Merchant</span></div>
+                  <div class="vp-det-row"><span>Ref</span><span class="vp-det-val">TXN****8301</span></div>
+                  <div class="vp-det-row"><span>Settled</span><span class="vp-det-val">0.6 seconds ago</span></div>
+                </div>
+                <div class="vp-safe">✓ Safe to release goods</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TICKER ══════════════════════════════════════════════ -->
+<div class="ticker">
+  <div class="ticker-track">
+    <!-- Duplicate items for seamless loop -->
+    <span class="ticker-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0B3D3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>₦4.2 Billion in fraud prevented</span>
+    <span class="ticker-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0B3D3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Avg verdict time: 0.8 seconds</span>
+    <span class="ticker-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0B3D3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>180,000+ merchants protected</span>
+    <span class="ticker-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0B3D3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Bank-grade encryption</span>
+    <span class="ticker-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0B3D3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Real banking ledger verification</span>
+    <span class="ticker-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0B3D3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Your messages stay private</span>
+    <!-- Duplicate -->
+    <span class="ticker-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0B3D3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>₦4.2 Billion in fraud prevented</span>
+    <span class="ticker-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0B3D3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Avg verdict time: 0.8 seconds</span>
+    <span class="ticker-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0B3D3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>180,000+ merchants protected</span>
+    <span class="ticker-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0B3D3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Bank-grade encryption</span>
+    <span class="ticker-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0B3D3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Real banking ledger verification</span>
+    <span class="ticker-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0B3D3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Your messages stay private</span>
+  </div>
+</div>
+
+<!-- ═══ PROBLEM SECTION ══════════════════════════════════════ -->
+<section class="sec prob-sec" id="problem">
+  <div class="center fade-up">
+    <div class="sec-badge">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      The Problem
+    </div>
+    <h2 class="sec-h2">Merchants lose money<br>every single day.</h2>
+    <p class="sec-p" style="margin:0 auto">Fraudsters have mastered fake payment alerts. One wrong release of goods can wipe out an entire day's profit.</p>
+  </div>
+
+  <div class="prob-grid" style="margin-top:64px">
+    <!-- Card 1 -->
+    <div class="prob-card fade-up d1">
+      <div class="prob-illus">
+        <!-- Fake alert SVG illustration -->
+        <svg width="38" height="38" viewBox="0 0 48 48" fill="none">
+          <rect x="8" y="4" width="32" height="40" rx="5" fill="#FEE2E2"/>
+          <rect x="14" y="12" width="20" height="3" rx="1.5" fill="#FECACA"/>
+          <rect x="14" y="18" width="14" height="2.5" rx="1.25" fill="#FECACA"/>
+          <rect x="14" y="24" width="18" height="2.5" rx="1.25" fill="#FECACA"/>
+          <circle cx="36" cy="10" r="8" fill="#EF4444"/>
+          <line x1="33" y1="7" x2="39" y2="13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="39" y1="7" x2="33" y2="13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="prob-h">Fake Payment Alerts</div>
+      <div class="prob-p">Fraudsters send fabricated SMS alerts that look exactly like real bank notifications — same format, same sender names, completely fake.</div>
+      <div class="prob-tag">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+        Most common fraud type
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="prob-card fade-up d2">
+      <div class="prob-illus">
+        <!-- Edited screenshot SVG -->
+        <svg width="38" height="38" viewBox="0 0 48 48" fill="none">
+          <rect x="6" y="8" width="36" height="30" rx="4" fill="#FEE2E2"/>
+          <rect x="10" y="12" width="28" height="18" rx="2" fill="#FECACA"/>
+          <rect x="13" y="15" width="14" height="2" rx="1" fill="#FCA5A5"/>
+          <rect x="13" y="19" width="10" height="2" rx="1" fill="#FCA5A5"/>
+          <path d="M32 36l8-8" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="40" cy="28" r="5" fill="#EF4444"/>
+          <path d="M38 28h4M40 26v4" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="prob-h">Edited Screenshots</div>
+      <div class="prob-p">WhatsApp and Instagram vendors receive manipulated payment screenshots from buyers. Amounts are changed after the fact with simple editing apps.</div>
+      <div class="prob-tag">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+        Rising in social commerce
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="prob-card fade-up d3">
+      <div class="prob-illus">
+        <!-- Delayed transfer SVG -->
+        <svg width="38" height="38" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="18" fill="#FEE2E2"/>
+          <circle cx="24" cy="24" r="13" fill="#FECACA"/>
+          <line x1="24" y1="24" x2="24" y2="14" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="24" y1="24" x2="31" y2="29" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="24" cy="24" r="2" fill="#EF4444"/>
+          <path d="M36 10l4-4M36 10h4M36 10v4" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="prob-h">Delayed Transfer Scams</div>
+      <div class="prob-p">A "reversal pending" trick — a real transfer is initiated but immediately reversed after goods are released. The merchant never gets paid.</div>
+      <div class="prob-tag">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+        POS agents most affected
+      </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="prob-card fade-up d4">
+      <div class="prob-illus">
+        <!-- Spoofed SMS SVG -->
+        <svg width="38" height="38" viewBox="0 0 48 48" fill="none">
+          <rect x="6" y="10" width="36" height="28" rx="5" fill="#FEE2E2"/>
+          <rect x="12" y="16" width="24" height="3" rx="1.5" fill="#FCA5A5"/>
+          <rect x="12" y="22" width="18" height="2.5" rx="1.25" fill="#FECACA"/>
+          <rect x="12" y="27" width="21" height="2.5" rx="1.25" fill="#FECACA"/>
+          <path d="M30 8a6 6 0 0 1 6 6" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+          <path d="M33 8a3 3 0 0 1 3 3" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="30" cy="9" r="2" fill="#EF4444"/>
+        </svg>
+      </div>
+      <div class="prob-h">Spoofed SMS Senders</div>
+      <div class="prob-p">Fraudsters spoof bank SMS sender IDs — your phone shows "GTBank" but the message came from a criminal. Indistinguishable to the naked eye.</div>
+      <div class="prob-tag">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+        Highly sophisticated attack
+      </div>
+    </div>
+  </div>
+
+  <!-- Impact callout -->
+  <div style="margin-top:48px;background:linear-gradient(135deg,#FEF2F2,#FFF5F5);border:1px solid rgba(239,68,68,0.15);border-radius:var(--r24);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap" class="fade-up">
+    <div>
+      <div style="font-size:13px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:8px">The Numbers Are Alarming</div>
+      <div style="font-size:22px;font-weight:800;color:var(--t1);letter-spacing:-0.5px">1 in 5 Nigerian merchants has been defrauded<br>by a fake payment alert in the last 12 months.</div>
+    </div>
+    <div style="text-align:center;flex-shrink:0">
+      <div style="font-size:48px;font-weight:900;color:var(--red);letter-spacing:-2px">₦890M</div>
+      <div style="font-size:13px;color:var(--t2)">Lost monthly to payment fraud</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ══════════════════════════════════════════ -->
+<section class="sec hiw-sec" id="how">
+  <div class="center hiw-hdr fade-up">
+    <div class="sec-badge">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      How It Works
+    </div>
+    <h2 class="sec-h2">Three steps.<br>Zero friction.</h2>
+    <p class="sec-p" style="margin:0 auto">Veri-phy runs silently in the background. When a payment SMS arrives, it works instantly — no manual input needed.</p>
+  </div>
+
+  <div class="hiw-flow fade-up">
+    <!-- Step 1 -->
+    <div class="hiw-step">
+      <div class="hiw-visual">
+        <div class="sv-sms">
+          <div class="sv-sms-bank">GTBank Nigeria</div>
+          <div class="sv-sms-txt">You have received</div>
+          <div class="sv-sms-amt">₦50,000</div>
+          <div class="sv-sms-txt">from AMINU MUSA · Ref: TXN****</div>
+        </div>
+      </div>
+      <div class="hiw-step-num-wrap">
+        <div class="hiw-num">1</div>
+        <div class="hiw-ico-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.64 3.38 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.09a16 16 0 0 0 6 6l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+      </div>
+      <div class="hiw-title">Alert Arrives</div>
+      <div class="hiw-desc">A payment SMS lands in the merchant's inbox. Veri-phy intercepts it the moment it arrives — before you even look at it.</div>
+    </div>
+
+    <!-- Connector -->
+    <div class="hiw-connector">
+      <div class="hiw-line">
+        <div class="hiw-line-seg"></div>
+        <div class="hiw-line-dot"></div>
+        <div class="hiw-line-seg"></div>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:-2px"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="hiw-step">
+      <div class="hiw-visual">
+        <div class="sv-verify">
+          <div style="position:relative;width:56px;height:56px">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" style="position:absolute;top:0;left:0;animation:spin-ring 1.8s linear infinite">
+              <circle cx="28" cy="28" r="22" stroke="#E2E8F0" stroke-width="3"/>
+              <path d="M28 6 A22 22 0 0 1 50 28" stroke="#14B8A6" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B3D3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+          </div>
+          <div style="font-size:11px;font-weight:700;color:var(--p);text-align:center">Checking ledger…</div>
+          <div style="font-size:10px;color:var(--t3);text-align:center">GTBank NIBSS API</div>
+        </div>
+      </div>
+      <div class="hiw-step-num-wrap">
+        <div class="hiw-num">2</div>
+        <div class="hiw-ico-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+      </div>
+      <div class="hiw-title">Veri-phy Verifies</div>
+      <div class="hiw-desc">Veri-phy checks the transaction reference against the bank's actual ledger via secure API. Not the SMS — the real record.</div>
+    </div>
+
+    <!-- Connector -->
+    <div class="hiw-connector">
+      <div class="hiw-line">
+        <div class="hiw-line-seg"></div>
+        <div class="hiw-line-dot"></div>
+        <div class="hiw-line-seg"></div>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:-2px"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="hiw-step">
+      <div class="hiw-visual">
+        <div class="sv-result">
+          <div class="sv-result-chip">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            VERIFIED
+          </div>
+          <div class="sv-result-sub">₦50,000 confirmed<br>0.8 seconds</div>
+          <div style="background:var(--green);color:white;padding:5px 14px;border-radius:var(--rfull);font-size:9px;font-weight:700">Safe to release goods</div>
+        </div>
+      </div>
+      <div class="hiw-step-num-wrap">
+        <div class="hiw-num">3</div>
+        <div class="hiw-ico-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+      </div>
+      <div class="hiw-title">Instant Verdict</div>
+      <div class="hiw-desc">A glanceable overlay appears on your screen in under a second. VERIFIED, PENDING, or FAKE — clear and unmistakable.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OVERLAY SHOWCASE ══════════════════════════════════════ -->
+<section class="sec ov-sec" id="overlays">
+  <div class="ov-hdr center fade-up">
+    <div class="sec-badge">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      Overlay System
+    </div>
+    <h2 class="sec-h2">Glanceable.<br>Unmistakable.</h2>
+    <p class="sec-p" style="margin:0 auto">Three clear verdicts. Readable in under one second. Designed for noisy market environments and bright outdoor light.</p>
+  </div>
+
+  <div class="ov-phones fade-up">
+    <!-- VERIFIED -->
+    <div class="ov-wrap">
+      <div class="ov-label lbl-v">✓ Verified</div>
+      <div class="ov-phone">
+        <div class="ov-screen">
+          <div class="ov-stat">
+            <span>9:41</span>
+            <div style="display:flex;gap:4px">
+              <svg width="10" height="10" viewBox="0 0 24 20" fill="white"><path d="M1 1h4v18H1V1zm6 3h4v15H7V4zm6 5h4v10h-4V9zm6-6h4v20h-4V3z"/></svg>
+              <svg width="18" height="10" viewBox="0 0 36 18" fill="none"><rect x="1" y="1" width="28" height="16" rx="3" stroke="white" stroke-width="1.5"/><rect x="3" y="3" width="18" height="12" rx="1.5" fill="white"/></svg>
+            </div>
+          </div>
+          <div class="ov-wa-hdr">
+            <div class="ov-wa-ava" style="background:#128C7E">GB</div>
+            <div><div class="ov-wa-name">GTBank Alerts</div><div class="ov-wa-sub">SMS</div></div>
+          </div>
+          <div class="ov-chat">
+            <div class="ov-bubble">
+              <div class="ov-bub-bank">GTBank Nigeria</div>
+              <div class="ov-bub-amt">₦25,000</div>
+              <div class="ov-bub-txt">received from IBRAHIM A. · Ref: TXN****8301</div>
+              <div class="ov-bub-time">9:41 AM ✓✓</div>
+            </div>
+          </div>
+          <!-- Verified overlay -->
+          <div class="mini-vp mv-verified">
+            <div class="mvp-handle"></div>
+            <div class="mvp-brand">
+              <div class="mvp-brand-box"><svg width="10" height="10" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 5.5V10c0 3.87 2.95 7.49 7 8.5 4.05-1.01 7-4.63 7-8.5V5.5L10 2z" fill="white"/></svg></div>
+              VERI-PHY
+            </div>
+            <div class="mvp-verdict">
+              <div class="mv-ic" style="background:#22C55E;color:white">✓</div>
+              <div><div class="mv-main">VERIFIED</div><div class="mv-sub">Confirmed in ledger</div></div>
+            </div>
+            <div class="mvp-rows">
+              <div class="mvp-row"><span>Amount</span><span class="mvp-rv">₦25,000</span></div>
+              <div class="mvp-row"><span>Bank</span><span class="mvp-rv">GTBank</span></div>
+              <div class="mvp-row"><span>Time</span><span class="mvp-rv">0.6s ago</span></div>
+            </div>
+            <div class="mvp-btn" style="background:#22C55E">✓ Safe to release goods</div>
+          </div>
+        </div>
+      </div>
+      <div class="ov-desc">Transaction confirmed in bank ledger. Safe to release goods immediately.</div>
+    </div>
+
+    <!-- PENDING -->
+    <div class="ov-wrap featured">
+      <div class="ov-label lbl-p">⏳ Pending</div>
+      <div class="ov-phone">
+        <div class="ov-screen">
+          <div class="ov-stat">
+            <span>9:41</span>
+            <div style="display:flex;gap:4px">
+              <svg width="10" height="10" viewBox="0 0 24 20" fill="white"><path d="M1 1h4v18H1V1zm6 3h4v15H7V4zm6 5h4v10h-4V9zm6-6h4v20h-4V3z"/></svg>
+              <svg width="18" height="10" viewBox="0 0 36 18" fill="none"><rect x="1" y="1" width="28" height="16" rx="3" stroke="white" stroke-width="1.5"/><rect x="3" y="3" width="18" height="12" rx="1.5" fill="white"/></svg>
+            </div>
+          </div>
+          <div class="ov-wa-hdr">
+            <div class="ov-wa-ava" style="background:#128C7E">GB</div>
+            <div><div class="ov-wa-name">GTBank Alerts</div><div class="ov-wa-sub">SMS</div></div>
+          </div>
+          <div class="ov-chat">
+            <div class="ov-bubble">
+              <div class="ov-bub-bank">GTBank Nigeria</div>
+              <div class="ov-bub-amt">₦80,000</div>
+              <div class="ov-bub-txt">received from KEMI ADEOLA · Ref: TXN****2210</div>
+              <div class="ov-bub-time">9:41 AM ✓✓</div>
+            </div>
+          </div>
+          <!-- Pending overlay -->
+          <div class="mini-vp mv-pending">
+            <div class="mvp-handle"></div>
+            <div class="mvp-brand">
+              <div class="mvp-brand-box"><svg width="10" height="10" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 5.5V10c0 3.87 2.95 7.49 7 8.5 4.05-1.01 7-4.63 7-8.5V5.5L10 2z" fill="white"/></svg></div>
+              VERI-PHY
+            </div>
+            <div class="mvp-verdict">
+              <div class="mv-ic" style="background:#F59E0B;color:white">⏳</div>
+              <div><div class="mv-main">PENDING</div><div class="mv-sub">Awaiting settlement</div></div>
+            </div>
+            <div class="mvp-rows">
+              <div class="mvp-row"><span>Amount</span><span class="mvp-rv">₦80,000</span></div>
+              <div class="mvp-row"><span>Bank</span><span class="mvp-rv">GTBank</span></div>
+              <div class="mvp-row"><span>ETA</span><span class="mvp-rv">~2 minutes</span></div>
+            </div>
+            <div class="mvp-btn" style="background:#F59E0B">⏳ Wait for confirmation</div>
+          </div>
+        </div>
+      </div>
+      <div class="ov-desc">Transfer initiated but not settled yet. Hold goods until verdict updates.</div>
+    </div>
+
+    <!-- FAKE -->
+    <div class="ov-wrap">
+      <div class="ov-label lbl-f">✕ Fake Alert</div>
+      <div class="ov-phone">
+        <div class="ov-screen">
+          <div class="ov-stat">
+            <span>9:41</span>
+            <div style="display:flex;gap:4px">
+              <svg width="10" height="10" viewBox="0 0 24 20" fill="white"><path d="M1 1h4v18H1V1zm6 3h4v15H7V4zm6 5h4v10h-4V9zm6-6h4v20h-4V3z"/></svg>
+              <svg width="18" height="10" viewBox="0 0 36 18" fill="none"><rect x="1" y="1" width="28" height="16" rx="3" stroke="white" stroke-width="1.5"/><rect x="3" y="3" width="12" height="12" rx="1.5" fill="white"/></svg>
+            </div>
+          </div>
+          <div class="ov-wa-hdr">
+            <div class="ov-wa-ava" style="background:#128C7E">UB</div>
+            <div><div class="ov-wa-name">UBA Nigeria</div><div class="ov-wa-sub">SMS</div></div>
+          </div>
+          <div class="ov-chat">
+            <div class="ov-bubble">
+              <div class="ov-bub-bank">UBA Nigeria</div>
+              <div class="ov-bub-amt">₦150,000</div>
+              <div class="ov-bub-txt">Credit alert. Ref: UBA2024***. Sender: EMEKA OBI.</div>
+              <div class="ov-bub-time">9:41 AM ✓✓</div>
+            </div>
+          </div>
+          <!-- Fake overlay -->
+          <div class="mini-vp mv-fake">
+            <div class="mvp-handle"></div>
+            <div class="mvp-brand">
+              <div class="mvp-brand-box"><svg width="10" height="10" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 5.5V10c0 3.87 2.95 7.49 7 8.5 4.05-1.01 7-4.63 7-8.5V5.5L10 2z" fill="white"/></svg></div>
+              VERI-PHY
+            </div>
+            <div class="mvp-verdict">
+              <div class="mv-ic" style="background:#EF4444;color:white">✕</div>
+              <div><div class="mv-main">NO MATCH</div><div class="mv-sub">Not found in ledger</div></div>
+            </div>
+            <div class="mvp-rows">
+              <div class="mvp-row"><span>Amount</span><span class="mvp-rv">₦150,000</span></div>
+              <div class="mvp-row"><span>Bank</span><span class="mvp-rv">UBA</span></div>
+              <div class="mvp-row"><span>Risk</span><span style="font-weight:700;color:#EF4444">HIGH</span></div>
+            </div>
+            <div class="mvp-btn" style="background:#EF4444">✕ Do not release goods</div>
+          </div>
+        </div>
+      </div>
+      <div class="ov-desc">No transaction found in bank ledger. This alert is fraudulent. Do not release goods.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST & PRIVACY ═══════════════════════════════════════ -->
+<section class="sec trust-sec" id="trust">
+  <div class="trust-hdr fade-up">
+    <div class="sec-badge" style="background:rgba(20,184,166,0.15);color:var(--accent)">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Privacy & Security
+    </div>
+    <h2 class="sec-h2" style="color:white">Your privacy is<br>our foundation.</h2>
+    <p class="sec-p">Veri-phy only reads payment alerts. Your personal messages, photos, and conversations are never accessed, stored, or shared.</p>
+  </div>
+
+  <div class="trust-grid fade-up">
+    <div class="trust-card">
+      <div class="tc-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" y1="10" x2="9" y2="10"/><line x1="12" y1="10" x2="12.01" y2="10"/><line x1="15" y1="10" x2="15.01" y2="10"/></svg>
+      </div>
+      <div class="tc-h">Only Payment Alerts</div>
+      <div class="tc-p">Veri-phy uses intelligent pattern matching to identify only banking SMS alerts. Personal messages, WhatsApp, and email are completely untouched.</div>
+    </div>
+    <div class="trust-card">
+      <div class="tc-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <div class="tc-h">End-to-End Encrypted</div>
+      <div class="tc-p">All verification requests are encrypted using AES-256 before leaving your device. Even we cannot read the content of alerts you verify.</div>
+    </div>
+    <div class="trust-card">
+      <div class="tc-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <div class="tc-h">Realtime Verification</div>
+      <div class="tc-p">Verdicts arrive in under one second. Our infrastructure connects to bank APIs directly so you're never left waiting at the counter.</div>
+    </div>
+    <div class="trust-card">
+      <div class="tc-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="tc-h">No Data Selling</div>
+      <div class="tc-p">Your transaction patterns and merchant activity are never sold to third parties. We are funded by merchants — not advertisers or data brokers.</div>
+    </div>
+    <div class="trust-card">
+      <div class="tc-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <div class="tc-h">NDPR Compliant</div>
+      <div class="tc-p">Fully compliant with Nigeria's Data Protection Regulation. Audited annually by independent security firms operating under CBN oversight.</div>
+    </div>
+    <div class="trust-card">
+      <div class="tc-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6l8.5 6L1 18V6z"/><path d="M15.5 6l8.5 6-8.5 6V6z" opacity=".5"/></svg>
+      </div>
+      <div class="tc-h">Works Offline Too</div>
+      <div class="tc-p">Last known verdicts are cached locally. If you lose signal in the market, you still see the most recent verification status for each alert.</div>
+    </div>
+  </div>
+
+  <div class="trust-bottom fade-up">
+    <div class="tb-stat"><div class="tv">256-bit</div><div class="tl">AES encryption</div></div>
+    <div style="width:1px;height:48px;background:rgba(255,255,255,0.1)"></div>
+    <div class="tb-stat"><div class="tv">NDPR</div><div class="tl">Fully compliant</div></div>
+    <div style="width:1px;height:48px;background:rgba(255,255,255,0.1)"></div>
+    <div class="tb-stat"><div class="tv">CBN</div><div class="tl">Partnered banks</div></div>
+    <div style="width:1px;height:48px;background:rgba(255,255,255,0.1)"></div>
+    <div class="tb-stat"><div class="tv">0 ms</div><div class="tl">Data retained on server</div></div>
+    <div style="margin-left:auto">
+      <div style="display:flex;align-items:center;gap:10px;background:rgba(20,184,166,0.12);border:1px solid rgba(20,184,166,0.25);border-radius:var(--r12);padding:14px 20px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        <div><div style="font-size:12px;font-weight:700;color:var(--accent)">Security Certified</div><div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px">ISO 27001 · SOC 2 Type II</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHO IT'S FOR ══════════════════════════════════════════ -->
+<section class="sec wif-sec" id="who">
+  <div class="wif-hdr fade-up">
+    <div class="sec-badge">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Who It's For
+    </div>
+    <h2 class="sec-h2">Built for Nigerian<br>merchants like you.</h2>
+    <p class="sec-p">Whether you sell from a stall, a phone, or Instagram — Veri-phy protects your livelihood.</p>
+  </div>
+
+  <div class="wif-grid fade-up">
+    <!-- POS Agent -->
+    <div class="wif-card">
+      <div class="wif-illus" style="background:#EAFBF8">
+        <svg width="44" height="44" viewBox="0 0 56 56" fill="none">
+          <rect x="12" y="8" width="32" height="40" rx="5" fill="#14B8A6" opacity="0.15"/>
+          <rect x="12" y="8" width="32" height="40" rx="5" stroke="#0B3D3A" stroke-width="2"/>
+          <rect x="18" y="14" width="20" height="14" rx="2" fill="#0B3D3A"/>
+          <rect x="19" y="15" width="18" height="6" rx="1" fill="#14B8A6" opacity="0.6"/>
+          <circle cx="22" cy="34" r="2" fill="#0B3D3A"/><circle cx="28" cy="34" r="2" fill="#0B3D3A"/><circle cx="34" cy="34" r="2" fill="#0B3D3A"/>
+          <circle cx="22" cy="40" r="2" fill="#0B3D3A"/><circle cx="28" cy="40" r="2" fill="#0B3D3A"/><circle cx="34" cy="40" r="2" fill="#14B8A6"/>
+        </svg>
+      </div>
+      <div class="wif-h">POS Agents</div>
+      <div class="wif-p">High-volume transactions daily. Every fake alert costs you real money. Veri-phy runs silently behind every swipe.</div>
+      <div class="wif-tag">Most Protected</div>
+    </div>
+    <!-- Market Trader -->
+    <div class="wif-card">
+      <div class="wif-illus" style="background:#FFF7ED">
+        <svg width="44" height="44" viewBox="0 0 56 56" fill="none">
+          <path d="M12 20h32l-4 24H16L12 20z" fill="#F59E0B" opacity="0.2"/>
+          <path d="M12 20h32l-4 24H16L12 20z" stroke="#92400E" stroke-width="2"/>
+          <path d="M20 20V16a8 8 0 0 1 16 0v4" stroke="#92400E" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="22" cy="30" r="3" fill="#F59E0B" opacity="0.8"/>
+          <circle cx="34" cy="30" r="3" fill="#F59E0B" opacity="0.8"/>
+          <line x1="22" y1="36" x2="34" y2="36" stroke="#92400E" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="wif-h">Market Traders</div>
+      <div class="wif-p">In the chaos of the market, you can't afford to study every alert. Veri-phy gives you a clear yes or no in under a second.</div>
+      <div class="wif-tag">Speed Optimised</div>
+    </div>
+    <!-- Phone Seller -->
+    <div class="wif-card">
+      <div class="wif-illus" style="background:#EFF6FF">
+        <svg width="44" height="44" viewBox="0 0 56 56" fill="none">
+          <rect x="17" y="6" width="22" height="44" rx="5" fill="#3B82F6" opacity="0.15"/>
+          <rect x="17" y="6" width="22" height="44" rx="5" stroke="#1D4ED8" stroke-width="2"/>
+          <rect x="21" y="12" width="14" height="22" rx="2" fill="#1D4ED8" opacity="0.1"/>
+          <rect x="21" y="12" width="14" height="22" rx="2" stroke="#1D4ED8" stroke-width="1.5"/>
+          <circle cx="28" cy="42" r="2.5" fill="#1D4ED8"/>
+          <circle cx="28" cy="19" r="4" fill="#3B82F6" opacity="0.4"/>
+          <path d="M25 19l2 2 4-4" stroke="#1D4ED8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="wif-h">Phone Sellers</div>
+      <div class="wif-p">Selling phones for ₦200K+? One fake alert can wipe out weeks of profit. Veri-phy is your mandatory protection layer.</div>
+      <div class="wif-tag">High-Value Guard</div>
+    </div>
+    <!-- WhatsApp Vendor -->
+    <div class="wif-card">
+      <div class="wif-illus" style="background:#F0FDF4">
+        <svg width="44" height="44" viewBox="0 0 56 56" fill="none">
+          <circle cx="28" cy="28" r="20" fill="#25D366" opacity="0.15"/>
+          <circle cx="28" cy="28" r="20" stroke="#15803D" stroke-width="2"/>
+          <path d="M36 20a12 12 0 1 0-8 20.78L20 44l2.2-7.16A12 12 0 0 0 36 20z" fill="#25D366" opacity="0.3" stroke="#15803D" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M23 26s2 0 3 2 3 3 5 2" stroke="#15803D" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="wif-h">WhatsApp Vendors</div>
+      <div class="wif-p">Screenshot fraud is rampant in social commerce. Veri-phy verifies the actual bank record — not just the image someone sends you.</div>
+      <div class="wif-tag">Social Commerce</div>
+    </div>
+    <!-- Dispatch Rider -->
+    <div class="wif-card">
+      <div class="wif-illus" style="background:#FDF4FF">
+        <svg width="44" height="44" viewBox="0 0 56 56" fill="none">
+          <circle cx="16" cy="38" r="8" fill="#A855F7" opacity="0.2" stroke="#7E22CE" stroke-width="2"/>
+          <circle cx="40" cy="38" r="8" fill="#A855F7" opacity="0.2" stroke="#7E22CE" stroke-width="2"/>
+          <path d="M16 30h8l6-10h6l4 10" stroke="#7E22CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M30 20l4 10" stroke="#7E22CE" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="28" cy="15" r="5" fill="#A855F7" opacity="0.3" stroke="#7E22CE" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="wif-h">Dispatch Riders</div>
+      <div class="wif-p">Collecting COD payments on delivery? Verify alerts before handing over the package. No network? Cached results still protect you.</div>
+      <div class="wif-tag">On-the-Go Ready</div>
+    </div>
+  </div>
+
+  <!-- Testimonial strip -->
+  <div style="margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px" class="fade-up">
+    <div style="background:white;border:1px solid var(--border);border-radius:var(--r20);padding:28px">
+      <div style="display:flex;gap:4px;margin-bottom:14px">
+        <span style="color:#F59E0B;font-size:16px">★★★★★</span>
+      </div>
+      <p style="font-size:14px;color:var(--t1);line-height:1.65;font-style:italic;margin-bottom:16px">"I was about to release a ₦45,000 phone when Veri-phy said FAKE. The customer ran away. This app saved my business."</p>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:36px;height:36px;background:linear-gradient(135deg,var(--p),var(--accent));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:white;flex-shrink:0">AK</div>
+        <div><div style="font-size:13px;font-weight:700">Abdullahi K.</div><div style="font-size:11px;color:var(--t3)">Phone Seller · Kano</div></div>
+      </div>
+    </div>
+    <div style="background:white;border:1px solid var(--border);border-radius:var(--r20);padding:28px">
+      <div style="display:flex;gap:4px;margin-bottom:14px">
+        <span style="color:#F59E0B;font-size:16px">★★★★★</span>
+      </div>
+      <p style="font-size:14px;color:var(--t1);line-height:1.65;font-style:italic;margin-bottom:16px">"For my POS business, every transaction matters. Veri-phy runs quietly and gives me the green light in seconds. I don't know how I survived without it."</p>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:36px;height:36px;background:linear-gradient(135deg,#D97706,#F59E0B);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:white;flex-shrink:0">FA</div>
+        <div><div style="font-size:13px;font-weight:700">Fatimah A.</div><div style="font-size:11px;color:var(--t3)">POS Agent · Lagos</div></div>
+      </div>
+    </div>
+    <div style="background:white;border:1px solid var(--border);border-radius:var(--r20);padding:28px">
+      <div style="display:flex;gap:4px;margin-bottom:14px">
+        <span style="color:#F59E0B;font-size:16px">★★★★★</span>
+      </div>
+      <p style="font-size:14px;color:var(--t1);line-height:1.65;font-style:italic;margin-bottom:16px">"I sell on Instagram and have over 2,000 customers. Screenshot fraud used to happen every week. Not anymore. Veri-phy changed everything."</p>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:36px;height:36px;background:linear-gradient(135deg,#15803D,#25D366);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:white;flex-shrink:0">CO</div>
+        <div><div style="font-size:13px;font-weight:700">Chidinma O.</div><div style="font-size:11px;color:var(--t3)">Instagram Vendor · Abuja</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ══════════════════════════════════════════════ -->
+<section class="cta-sec" id="download">
+  <div class="cta-inner fade-up">
+    <div class="hero-eyebrow" style="justify-content:center;display:inline-flex;margin-bottom:28px">
+      <span class="eyebrow-dot"></span>
+      Free to Download · Always
+    </div>
+    <h2 class="cta-h">Don't trust the alert.<br><span>Trust the ledger.</span></h2>
+    <p class="cta-p">Join 180,000+ Nigerian merchants who verify before they release. Your livelihood deserves protection.</p>
+    <div class="cta-btns">
+      <a class="btn-dl" href="#">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+        Download Veri-phy
+      </a>
+    </div>
+    <div class="cta-stores">
+      <a class="store-btn" href="#">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M3.18 23.77C3.64 24.14 4.24 24.14 4.78 23.77l15.03-8.68-3.22-3.22-13.41 11.9zM.22 1.18C.08 1.5 0 1.86 0 2.26v19.48c0 .4.08.76.22 1.08l.11.11L10.97 12v-.26L.33 1.07.22 1.18zM23.03 10.36L19.83 8.5l-3.46 3.46 3.46 3.46 3.22-1.88c.93-.54.93-1.41 0-1.94l-.02.76zM4.78.23C4.24-.14 3.64-.14 3.18.23L.33 11.72l10.64-10.63L4.78.23z" opacity=".8"/></svg>
+        <div><div class="sb-top">Get it on</div><div class="sb-main">Google Play</div></div>
+      </a>
+      <a class="store-btn" href="#">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" opacity=".9"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.39 1.42-2.37 4.26.03 3.37 2.9 4.5 2.93 4.51l-.31.85zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <div><div class="sb-top">Download on the</div><div class="sb-main">App Store</div></div>
+      </a>
+    </div>
+    <div style="margin-top:40px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap">
+      <div style="text-align:center">
+        <div style="font-size:28px;font-weight:900;color:white;letter-spacing:-1px">4.9</div>
+        <div style="display:flex;justify-content:center;gap:2px;margin:4px 0"><span style="color:#F59E0B;font-size:14px">★★★★★</span></div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.4)">App store rating</div>
+      </div>
+      <div style="width:1px;height:64px;background:rgba(255,255,255,0.08)"></div>
+      <div style="text-align:center">
+        <div style="font-size:28px;font-weight:900;color:white;letter-spacing:-1px">180K+</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:8px">Merchants protected</div>
+      </div>
+      <div style="width:1px;height:64px;background:rgba(255,255,255,0.08)"></div>
+      <div style="text-align:center">
+        <div style="font-size:28px;font-weight:900;color:white;letter-spacing:-1px">Free</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:8px">Always free for merchants</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a class="nav-logo" href="#" style="margin-bottom:0">
+        <div class="nav-logo-box">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 5.5V10c0 3.87 2.95 7.49 7 8.5 4.05-1.01 7-4.63 7-8.5V5.5L10 2z" fill="white"/><path d="M7.5 10l2 2 3-3" stroke="#14B8A6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="nav-logo-text">Veri-phy</span>
+      </a>
+      <p class="ft-brand-desc">Truecaller for payment alerts. Real-time fraud protection for Nigerian merchants, POS agents, and informal commerce operators.</p>
+      <div style="display:flex;gap:12px;margin-top:24px">
+        <a href="#" style="width:36px;height:36px;background:rgba(255,255,255,0.07);border-radius:9px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.4);transition:all 0.2s;text-decoration:none" onmouseover="this.style.background='rgba(255,255,255,0.12)';this.style.color='white'" onmouseout="this.style.background='rgba(255,255,255,0.07)';this.style.color='rgba(255,255,255,0.4)'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+        </a>
+        <a href="#" style="width:36px;height:36px;background:rgba(255,255,255,0.07);border-radius:9px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.4);transition:all 0.2s;text-decoration:none" onmouseover="this.style.background='rgba(255,255,255,0.12)';this.style.color='white'" onmouseout="this.style.background='rgba(255,255,255,0.07)';this.style.color='rgba(255,255,255,0.4)'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="ft-col-h">Product</div>
+      <ul class="ft-links">
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#overlays">Overlay System</a></li>
+        <li><a href="#">Merchant Plans</a></li>
+        <li><a href="#">API for Banks</a></li>
+        <li><a href="#">Changelog</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="ft-col-h">Company</div>
+      <ul class="ft-links">
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press kit</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="ft-col-h">Legal</div>
+      <ul class="ft-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+        <li><a href="#">NDPR Compliance</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>© 2026 Veri-phy Inc. All rights reserved.</span>
+    <span style="display:flex;align-items:center;gap:6px">
+      <span style="width:7px;height:7px;background:#22C55E;border-radius:50%;animation:edot 2s infinite"></span>
+      All systems operational
+    </span>
+    <div class="ft-legal">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
