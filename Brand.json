@@ -1,0 +1,164 @@
+{
+  "brand": {
+    "name": "Veri-phy",
+    "source": ["styles.css", "index.html"],
+    "usage": "Shared color tokens for Tailwind CSS across web, dashboard, and mobile apps."
+  },
+  "palette": {
+    "primary": {
+      "900": "#071F1E",
+      "800": "#0B3D3A",
+      "700": "#0F5C57",
+      "600": "#1A6B65",
+      "DEFAULT": "#0B3D3A"
+    },
+    "accent": {
+      "50": "#EAFBF8",
+      "100": "#D1FDF7",
+      "500": "#14B8A6",
+      "600": "#0F9F92",
+      "DEFAULT": "#14B8A6"
+    },
+    "neutral": {
+      "0": "#FFFFFF",
+      "50": "#F7F9FB",
+      "200": "#E2E8F0",
+      "400": "#94A3B8",
+      "500": "#64748B",
+      "900": "#0F172A",
+      "950": "#040D0C"
+    },
+    "success": {
+      "50": "#F0FDF4",
+      "100": "#DCFCE7",
+      "500": "#22C55E",
+      "600": "#16A34A",
+      "700": "#15803D",
+      "DEFAULT": "#22C55E"
+    },
+    "warning": {
+      "50": "#FFFBEB",
+      "100": "#FEF3C7",
+      "500": "#F59E0B",
+      "600": "#D97706",
+      "800": "#92400E",
+      "DEFAULT": "#F59E0B"
+    },
+    "danger": {
+      "50": "#FEF2F2",
+      "100": "#FEE2E2",
+      "200": "#FECACA",
+      "300": "#FCA5A5",
+      "500": "#EF4444",
+      "600": "#DC2626",
+      "900": "#7F1D1D",
+      "DEFAULT": "#EF4444"
+    },
+    "blue": {
+      "50": "#EFF6FF",
+      "500": "#3B82F6",
+      "700": "#1D4ED8"
+    },
+    "purple": {
+      "50": "#FDF4FF",
+      "500": "#A855F7",
+      "700": "#7E22CE"
+    },
+    "whatsapp": {
+      "chat": "#ECE5DD",
+      "header": "#075E54",
+      "brand": "#128C7E",
+      "light": "#25D366"
+    }
+  },
+  "semantic": {
+    "background": "#FFFFFF",
+    "surface": "#F7F9FB",
+    "border": "#E2E8F0",
+    "text": {
+      "primary": "#0F172A",
+      "secondary": "#64748B",
+      "muted": "#94A3B8",
+      "inverse": "#FFFFFF"
+    },
+    "brand": {
+      "primary": "#0B3D3A",
+      "primaryHover": "#0F5C57",
+      "accent": "#14B8A6",
+      "accentHover": "#0F9F92",
+      "accentSoft": "#EAFBF8"
+    },
+    "status": {
+      "verified": "#22C55E",
+      "pending": "#F59E0B",
+      "fake": "#EF4444"
+    }
+  },
+  "gradients": {
+    "brandHero": ["#071F1E", "#0B3D3A", "#0F5C57"],
+    "brandCta": ["#060F0E", "#0B3D3A"],
+    "brandMark": ["#14B8A6", "#0F5C57"],
+    "verifiedSurface": ["#EAFBF8", "#D1FDF7"]
+  },
+  "tailwind": {
+    "colors": {
+      "brand": {
+        "900": "#071F1E",
+        "800": "#0B3D3A",
+        "700": "#0F5C57",
+        "600": "#1A6B65",
+        "DEFAULT": "#0B3D3A"
+      },
+      "accent": {
+        "50": "#EAFBF8",
+        "100": "#D1FDF7",
+        "500": "#14B8A6",
+        "600": "#0F9F92",
+        "DEFAULT": "#14B8A6"
+      },
+      "surface": {
+        "DEFAULT": "#F7F9FB",
+        "white": "#FFFFFF",
+        "border": "#E2E8F0"
+      },
+      "ink": {
+        "DEFAULT": "#0F172A",
+        "muted": "#64748B",
+        "subtle": "#94A3B8",
+        "inverse": "#FFFFFF"
+      },
+      "success": {
+        "50": "#F0FDF4",
+        "100": "#DCFCE7",
+        "500": "#22C55E",
+        "600": "#16A34A",
+        "700": "#15803D",
+        "DEFAULT": "#22C55E"
+      },
+      "warning": {
+        "50": "#FFFBEB",
+        "100": "#FEF3C7",
+        "500": "#F59E0B",
+        "600": "#D97706",
+        "800": "#92400E",
+        "DEFAULT": "#F59E0B"
+      },
+      "danger": {
+        "50": "#FEF2F2",
+        "100": "#FEE2E2",
+        "200": "#FECACA",
+        "300": "#FCA5A5",
+        "500": "#EF4444",
+        "600": "#DC2626",
+        "900": "#7F1D1D",
+        "DEFAULT": "#EF4444"
+      },
+      "whatsapp": {
+        "chat": "#ECE5DD",
+        "header": "#075E54",
+        "brand": "#128C7E",
+        "light": "#25D366"
+      }
+    }
+  }
+}
